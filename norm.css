@@ -1,0 +1,553 @@
+/*
+   Casacading style sheets definitions for MYDATA web interface
+   This is unpublished prorietary source code of
+   MYDATA automation AB
+   (c) 2000
+*/
+
+/******
+  BODY
+ ******/
+
+BODY, TABLE, TD, P {
+	font-family:      Arial, Helvetica, Sans-Serif ;
+	color:            black ;
+	background-color: white ;
+}
+
+/******
+  Links
+ ******/
+
+/* Make all links blue (including visited) */
+A:link {
+ color: blue ;
+ text-decoration: none ;
+}
+A:visited {
+ color: blue ;
+ text-decoration: none ;
+}
+
+/* Give IE-users a nice underline when they pass over a link with mouse */
+A:hover {
+ color: #8000ff ;
+ text-decoration: underline ;
+}
+
+/****
+ Header, footer, and borders between header-body and body-footer
+ ****/
+TABLE.header {
+      width: 100% ;
+      text-align: center ;
+}
+
+TD.header, TD.headerTitle {
+	vertical-align: middle ;
+	text-align: center ;
+	font-size: 140% ;
+	font-family:      Arial, Helvetica, SansSerif ;
+	color:            black ;
+}
+TD.headerTitle {
+	font-size: 18pt ;
+	font-weight: Bold ;
+}
+.headerUser {
+	font-size: 14pt ;
+	font-weight: Normal ;
+	font-family:  Courier,monospace ;
+        color: black ;
+}
+
+.border {
+	font-style: Italic ;
+	background-color: #f0f0ff ;
+}
+HR {
+    color: blue ;
+}
+HR.border {
+	color: blue  ;
+}
+
+.footer {
+    font-style: Normal ;
+    font-size: 8pt ;
+}
+
+.Error {
+	color: red ;
+	/*	background-color: #e0e0e0 ;*/
+}
+
+.Message {
+    color: black ;
+    font-weight: Bold ;
+    font-size: 120% ;
+}
+
+P.Error, TABLE.Error, DL.Error {
+    text-indent: 0.5in ;
+    margin-left:    0.5in ;
+    color: red ;
+}
+
+dt.Error {
+    font-weight: Bold ;
+}
+
+/* Special text properties */
+
+/* Documentation file text */
+.DocText {
+	margin-left:    2% ;
+	margin-right:    2% ;
+	font-size:      100% ;
+	font-family:      Arial, Helvetica,SansSerif ;
+}
+
+
+H1.Help {
+    margin-left:    3% ;
+	margin-right:    3% ;
+    background-color: #e0e0e0 ;
+    font-size: 130% ;
+}
+H2.Help {
+    margin-left:    5% ;
+	margin-right:    5% ;
+    background-color: #e0e0e0 ;
+    font-size: 120% ;
+}
+H3.Help {
+    margin-left:    7% ;
+	margin-right:    7% ;
+    background-color: #e0e0e0 ;
+    font-size: 110% ;
+}
+H4.Help {
+    margin-left:    10% ;
+    margin-right:    10% ;
+    font-weight: Bold ;
+
+}
+A.Help {
+     color: white ;
+    background-color: blue ;
+    font-weight: Bold ;
+}
+
+A:hover.Help {
+    color: blue ;
+    background-color: white ;
+    font-weight: Bold ;
+}
+A.Help:visited {
+     color: white ;
+    background-color: blue ;
+    font-weight: Bold ;
+}
+
+P.Help  {
+	margin-left:    10% ;
+	margin-right:    10% ;
+	font-size:      100% ;
+	font-family:      Arial, Helvetica,SansSerif ;
+}
+UL.Help{
+	margin-left:    15% ;
+	margin-right:    10% ;
+	font-size:      100% ;
+	font-family:      Arial, Helvetica,SansSerif ;
+}
+DL.Help  {
+	margin-left:    12% ;
+	margin-right:    10% ;
+	font-size:      100% ;
+	font-family:      Arial, Helvetica,SansSerif ;
+}
+DL.Help dt  {
+	font-size:      100% ;
+    font-weight: Bold ;
+	font-family:      Arial, Helvetica,SansSerif ;
+}
+P.HelpNote {
+    font-weight: Bold ;
+    margin-left:    15% ;
+    margin-right:    15% ;
+    font-size:      100% ;
+    border:  solid red ;
+}
+
+
+P.Warning {
+	margin-left:    10% ;
+	margin-right:    10% ;
+	font-size:      120% ;
+	font-weight:    Bold;
+	font-family:      Arial, Helvetica,SansSerif ;
+
+}
+
+
+.WarningText {
+    /*font-weight: Bold ;*/
+    color: red ;
+}
+.NotesText {
+    font-size: 80% ;
+    color: red ;
+}
+
+.FatalMessage {
+    font-family:  Courier,monospace ;
+    color: red ;
+    font-weight: Bold ;
+    background-color: yellow ;
+}
+.ErrorMessage {
+    font-family:  Courier,monospace ;
+    color: red ;
+}
+.WarningMessage {
+    font-family:  Courier,monospace ;
+    color: black ;
+}
+.InfoMessage {
+    font-family:  Courier,monospace ;
+    color: green ;
+}
+
+
+/****
+ Dump
+ ****/
+
+h1.Dump {
+    font-size: 140% ;
+    text-align: center ;
+    color: red ;
+    font-weight: Bold ;
+}
+h2.Dump {
+    font-size: 120% ;
+    margin-left: 2% ;
+    font-weight: Bold ;
+}
+dl.Dump {
+    margin-left: 5% ;
+}
+dt.Dump {
+    font-weight: Bold ;
+    font-size: 100% ;
+}
+dd.Dump {
+    font-family:  Courier,monospace ;
+    font-size: 100% ;
+}
+
+/*****
+ Index
+ *****/
+.Index {
+    /*    color: blue ;*/
+    font-size: 24pt ;
+    text-align: center ;
+}
+/*****
+ Menus
+ *****/
+
+.Menu {
+    font-size: 14pt ;
+    /*    background-color: #f0f0f0 ;    */
+
+}
+td.Menu {
+    margin-left:    0in ;
+    background-color: white ;
+    /*    background-color: #f0f0e0 ;*/
+}
+
+th.Menu {
+    text-align: left ;
+    margin-left:    0in ;
+    background-color: #f0f0f0 ;
+}
+
+.Menu2 {
+}
+td.Menu2 {
+    margin-left:    0in ;
+}
+
+
+TABLE.MainMenu TABLE.Menu2 {
+    margin-left:    0in ;
+    background-color: #f0f0f0 ;
+}
+
+
+TD.MainMenu TD.Menu2 {
+	background-color: #f0f0f0 ;
+}
+
+P.MainMenu {
+	margin-left:    0in ;
+	font-size:      110% ;
+	font-family:      Arial, Helvetica,SansSerif ;
+	background-color: #f0f0f0 ;
+}
+
+P.Menu2 {
+	margin-left:    0in ;
+	font-size:      90% ;
+	font-family:      Arial, Helvetica,SansSerif ;
+	background-color: #f0f0f0 ;
+}
+
+/****
+  PrintData
+ ****/
+
+.PrintData {
+    font-family:     monospace ;
+    font-size:      10pt ;
+    background-color: #f0f0f0 ;
+}
+.PrintDataBold {
+    font-family:     monospace ;
+    font-size:      10pt ;
+    font-weight:    bold ;
+    background-color: #f0f0f0 ;
+}
+.PrintDataItalics {
+    font-family:     monospace ;
+    font-size:      10pt ;
+    font-style:    italic ;
+    background-color: #f0f0f0 ;
+}
+
+
+
+/****
+ SmallStatusWindow
+****/
+
+BODY.SmallStatusWindow {
+	font-family:      Arial, Helvetica,SansSerif ;
+	font-size:        12pt ;
+	color:            white ;
+	background-color: blue ;
+}
+
+Table.SmallStatusWindow {
+    background-color: blue ;
+}
+TH.SmallStatusWindowHeader {
+    background-color: blue ;
+    font-size:        100%;
+    vertical-align: top ;
+    text-align:	  left ;
+    color: white ;
+}
+TH.SmallStatusWindow {
+    background-color: blue ;
+    font-size:        80%;
+    vertical-align: top ;
+    text-align:	  right ;
+    color: white ;
+}
+TD.SmallStatusWindow {
+    background-color: white ;
+    font-size:        80%;
+    vertical-align: top ;
+    text-align:	  left ;
+    color: black ;
+}
+.SmallStatusWindowStatus {
+    background-color: white ;
+    font-size:        80%;
+    vertical-align: top ;
+    text-align:	  center ;
+    font-weight:    bold;
+    color: black ;
+}
+
+/****
+ DataTable
+****/
+Table.DataTable {
+    background-color: white ;
+    margin-left: 5% ;
+    margin-right: auto ;
+}
+TH.DataTable {
+    background-color: #e0e0e0 ;
+    font-family:      Arial, Helvetica, SansSerif ;
+    vertical-align: bottom ;
+}
+TH.DataTableHeader {
+    background-color: #ffffff ;
+    font-family:      Arial, Helvetica, SansSerif ;
+    vertical-align: top ;
+}
+TD.DataTableImage {
+    background-color: #ffffff ;
+}
+TD.DataTable {
+    background-color: #f0f0f0 ;
+    /*    font-family:      Courier, Monospace ;*/
+    font-family:      Arial, Helvetica, SansSerif ;
+    font-size:   90% ;
+    vertical-align: top ;
+}
+TD.DataTableNumeric {
+    background-color: #f0f0f0 ;
+    /*    font-family:      Courier, Monospace ;*/
+    font-family:      Arial, Helvetica, SansSerif ;
+    font-size:   90% ;
+    vertical-align: top ;
+    text-align:	  right ;
+}
+TD.DataTableEmptyCell {
+    background-color: white ;
+}
+.DataTableBGYellow {
+    background-color: #fff0ff ;
+}
+.DataTableBGGreen {
+    background-color: #f0fff0 ;
+}
+
+TABLE.DataTable2 {
+    background-color: white ;
+    margin-left: 5% ;
+    margin-right: auto ;
+}
+TH.DataTable2 {
+    background-color: #e0e0e0 ;
+    font-family:      Arial, Helvetica, SansSerif ;
+    text-align: Right ;
+    vertical-align: top ;
+}
+
+TD.DataTable2 {
+    background-color: #f0f0f0 ;
+    /*    font-family:      Courier, Monospace ;*/
+    font-family:      Arial, Helvetica, SansSerif ;
+    font-size:   90% ;
+    vertical-align: top ;
+}
+
+H3.DataTable2 {
+    margin-top: 12pt ;
+    margin-bottom: 3pt ;
+}
+
+TABLE.DataTableReport {
+    background-color: #f0f0f0 ;
+    margin-left: 5% ;
+    margin-right: 20% ;
+}
+TH.DataTableReport {
+    background-color: #f0f0f0 ;
+    font-family:      Arial, Helvetica, SansSerif ;
+    font-size:   100% ;
+    font-weight: Normal ;
+    text-align: Right ;
+    vertical-align: top ;
+}
+TH.DataTableReportSubHeader {
+    background-color: #e0e0e0 ;
+    font-family:      Arial, Helvetica, SansSerif ;
+    font-size:   100% ;
+    text-align: Left ;
+    vertical-align: top ;
+}
+
+TD.DataTableReport {
+    background-color: #f0f0f0 ;
+    font-family:      Arial, Helvetica, SansSerif ;
+    font-size:   90% ;
+    font-weight: Normal ;
+    vertical-align: top ;
+}
+.DataTableReportSubTable {
+    background-color: #f0f0f0 ;
+}
+
+
+/*****
+ List data
+ *****/
+
+TABLE.ListData {
+    background-color: white ;
+}
+
+TABLE.ListDataNested {
+    background-color: white ;
+}
+
+UL.ListData, DIV.ListData, TD.ListData
+{
+    background-color: #f0f0f0 ;
+    font-family:      Arial, Helvetica,SansSerif ;
+    /*    font-family:      Courier ;*/
+}
+/*
+TD.ListDataNumeric {
+    background-color: #f0f0f0 ;
+    font-family:      Arial, Helvetica,SansSerif ;
+    text-align:	  right ;
+}
+*/
+TH.ListData {
+    background-color: #e0e0e0 ;
+    font-family:      Arial, Helvetica,SansSerif ;
+}
+H1.ListData {
+    font-family:      Arial, Helvetica,SansSerif ;
+    text-align:       center ;
+    font-size:	  120% ;
+}
+/*
+  TD.ListDataPrompt {
+    background-color: #e0e0e0 ;
+    text-align:       right ;
+}
+*/
+.ListDataShortcuts {
+    text-align: center ;
+    font-family: Arial, Helvetica, SansSerif ;
+    font-size: 80%
+}
+.InfoText {
+    text-align: center ;
+    font-family: Arial, Helvetica, SansSerif ;
+    font-weight:    bold;
+}
+
+TD.ListDataFirstLetter {
+    background-color: white ;
+    font-family:      Arial, Helvetica,SansSerif ;
+    font-size:      120% ;
+    text-align:       right ;
+}
+
+/*UL.MainMenu {
+
+}*/
+
+/*
+  P.Note {
+	font-size:      120% ;
+	font-weight:    bold;
+	color:		red;
+	background-color: #ffe0e0 ;
+	text-align:     center;
+}
+*/
