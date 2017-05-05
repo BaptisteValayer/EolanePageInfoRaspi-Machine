@@ -1,13 +1,12 @@
-
 /*$(document).ready(function(){
-  /*var ajd = new Date();
+  var ajd = new Date();
   var year = ajd.getFullYear();
   var month = ajd.getMonth() +1;
   var day = ajd.getDate();
 
 
   var invocation = new XMLHttpRequest();
-  var url = 'http://10.100.74.4/machUtil.cgi?MACHINE=+--&STIME=FROM&SDELTAD=0&PERIOD=DAYS&TIMEUNIT=HHMMSS&TIMEDISP=BOTH&BZ=Yes&REPORT=G%E9n%E9rer+les+rapports&STARTYEAR='+year+'&STARTMONTH='+month+'&STARTDAY='+day;
+  var url = 'http://10.100.74.7/machUtil.cgi?MACHINE=+--&STIME=FROM&SDELTAD=0&PERIOD=DAYS&TIMEUNIT=HHMMSS&TIMEDISP=BOTH&BZ=Yes&REPORT=G%E9n%E9rer+les+rapports&STARTYEAR='+year+'&STARTMONTH='+month+'&STARTDAY='+day;
 
   invocation.onload = function() {
 
@@ -19,11 +18,10 @@
   invocation.open("GET", url, true);
 
   invocation.send();
-  /*$.get("http://10.100.74.4/machUtil.cgi?MACHINE=+--&STIME=FROM&SDELTAD=0&PERIOD=DAYS&TIMEUNIT=HHMMSS&TIMEDISP=BOTH&BZ=Yes&REPORT=G%E9n%E9rer+les+rapports",{STARTYEAR:year,STARTMONTH:month,STARTDAY:day},function(data){
+  $.get("http://10.100.74.7/machUtil.cgi?MACHINE=+--&STIME=FROM&SDELTAD=0&PERIOD=DAYS&TIMEUNIT=HHMMSS&TIMEDISP=BOTH&BZ=Yes&REPORT=G%E9n%E9rer+les+rapports",{STARTYEAR:year,STARTMONTH:month,STARTDAY:day},function(data){
     console.log(data);
   })
 });*/
-
 var tableauTotale = [];
 
 function getInfo(){
@@ -43,7 +41,6 @@ function getInfo(){
         tableauTotale[MachineNameList[index].textContent]=obj;
         obj={};
   });
-  console.log(tableauTotale);
   createPageWithCharts(tableauTotale);
 }
 
@@ -51,26 +48,42 @@ function createPageWithCharts(tableauInfo){
   $("#allInfo").empty();
   for (var nomMachine in tableauInfo) {
     if(tableauInfo[nomMachine]['Temps d\'activitéP']=="-"){
-      $('<canvas>').addClass(nomMachine).attr("width",300).attr("height",300).appendTo("#allCanvas");
+      $('<canvas>').addClass(nomMachine)
+                   .attr("width",300)
+                   .attr("height",300)
+                   .css("display","inline")
+                   .css("margin","5")
+                   .css("background-color","#3d4350")
+                   .css("border","solid 3px")
+                   .css("border-color","#1b1d23")
+                   .appendTo("#allCanvas");
       var ctx = $("."+nomMachine);
       ctx.drawText({
         text: nomMachine,
         fontFamily: 'Arial, Helvetica, Sans-Serif',
         fontStyle: 'bold',
         fontSize: 30,
-        x: 150, y: 20,
-        fillStyle: '#1C2833',
+        x: 150, y: 25,
+        fillStyle: '#1b1d23',
       });
       ctx.drawRect({
-        fillStyle: '#666666',
-        x: 140, y: 145,
+        fillStyle: '#FFFFFF',
+        x: 130, y: 145,
         fromCenter: false,
-        width: 25,
+        width: 35,
         height: 10
       });
     }
     else {
-      $('<canvas>').addClass(nomMachine).attr("width",300).attr("height",300).css("display","inline").css("margin","5").appendTo("#allCanvas");
+      $('<canvas>').addClass(nomMachine)
+                   .attr("width",300)
+                   .attr("height",300)
+                   .css("display","inline")
+                   .css("margin","5")
+                   .css("background-color","#3d4350")
+                   .css("border","solid 3px")
+                   .css("border-color","#1b1d23")
+                   .appendTo("#allCanvas");
       var ctx = $("."+nomMachine);
       var data = {
         labels: [
@@ -97,18 +110,20 @@ function createPageWithCharts(tableauInfo){
             title: {
                 display: true,
                 fontSize : 30,
-                fontColor: '#1C2833',
-                text: nomMachine
+                fontColor: '#1b1d23',
+                text: nomMachine,
             },
-            showTooltips: false,
             animation:{
                 animateScale:true,
                 onComplete: function () {
                   this.chart.ctx.textBaseline = "middle";
-                  this.chart.ctx.fillStyle = "#666666";
-                  this.chart.ctx.fillText(tableauInfo[nomMachine]['Temps d\'activitéP']+"%",125,220);
-                  this.chart.ctx.fillText("Pieces = "+tableauInfo[nomMachine]['Pièces'],15,60);
-                  this.chart.ctx.fillText("Cartes = "+tableauInfo[nomMachine]['Cartes unitaires'],15,88);
+
+                  this.chart.ctx.font = "bold 20px Helvetica Neue Helvetica, Arial, sans-serif",
+                  this.chart.ctx.fillStyle = ColorCalcul(tableauInfo[this.chart.ctx.canvas.className]['Temps d\'activitéP'])
+                  this.chart.ctx.fillText(tableauInfo[this.chart.ctx.canvas.className]['Temps d\'activitéP']+"%",135,220);
+                  this.chart.ctx.fillStyle = "#9da5b4";
+                  this.chart.ctx.fillText("Pieces = "+tableauInfo[this.chart.ctx.canvas.className]['Pièces'],15,60);
+                  this.chart.ctx.fillText("Cartes = "+tableauInfo[this.chart.ctx.canvas.className]['Cartes unitaires'],15,88);
                 }
             },
             legend: {
@@ -125,4 +140,14 @@ function createPageWithCharts(tableauInfo){
       });
     }
   }
+}
+
+function ColorCalcul(pourcent){
+  if(pourcent<60){return "#E74C3C"}
+  else if (pourcent<=75) {
+    return "#E67E22"
+  }
+  else {
+    return "#2ECC71"
+  };
 }

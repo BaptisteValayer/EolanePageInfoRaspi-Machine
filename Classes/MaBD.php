@@ -10,8 +10,8 @@ class MaBD {
    // Obenir le singleton
    static function getInstance() {
       if (self::$pdo == null) {
-         $dsn = "mysql:host=localhost;dbname=IPRdB;charset=utf8";
-         self::$pdo = new PDO($dsn, "root", "");
+         $dsn = "mysql:host=10.100.74.7;dbname=mydata db;charset=utf8";
+         self::$pdo = new PDO($dsn, "viewreader", "viewsonly");
          self::$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
       }
       return self::$pdo;
